@@ -24,6 +24,17 @@
       --fn-bg: #f5f3ef;
     }
 
+    [data-theme="dark"] {
+      --text: #e0ddd5;
+      --text-secondary: #a09a8e;
+      --bg: #1a1917;
+      --bg-alt: #23221f;
+      --accent: #cd5c5c;
+      --accent-light: #e07070;
+      --border: #3a3835;
+      --fn-bg: #23221f;
+    }
+
     html { font-size: 18px; scroll-behavior: smooth; }
 
     body {
@@ -324,6 +335,29 @@
       .page-header h1 { font-size: 1.8rem; }
       h2 { font-size: 1.3rem; }
     }
+
+    /* --- Theme toggle --- */
+    .theme-toggle {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 300;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .theme-toggle:hover { color: var(--text); border-color: var(--text-secondary); }
 
     /* Print */
     @media print {
@@ -704,7 +738,35 @@
 </div>
 </div>
 
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">&#9789;</button>
+
 <script>
+// Theme toggle
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.querySelector('.theme-toggle');
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    html.removeAttribute('data-theme');
+    btn.innerHTML = '&#9789;';
+    localStorage.setItem('theme', 'light');
+  } else {
+    html.setAttribute('data-theme', 'dark');
+    btn.innerHTML = '&#9788;';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+
+// Restore saved preference or respect system preference
+(function() {
+  var saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    var btn = document.querySelector('.theme-toggle');
+    if (btn) btn.innerHTML = '&#9788;';
+  }
+})();
+
 // Footnote expansion
 document.addEventListener('click', function(e) {
   const fn = e.target.closest('sup.fn');
