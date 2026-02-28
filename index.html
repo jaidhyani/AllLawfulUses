@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Lawful Uses</title>
+  <meta name="description" content="How the OpenAI–Pentagon agreement's safeguards permit everything they claim to prevent. A legal analysis of the gap between stated red lines and functional outcomes.">
+  <meta property="og:title" content="All Lawful Uses">
+  <meta property="og:description" content="Five documented scenarios where the OpenAI–DoW agreement's letter permits what its spirit claims to prevent.">
+  <meta property="og:type" content="article">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --bg: #fafaf8;
+      --bg-alt: #f0eeeb;
+      --accent: #8b0000;
+      --accent-light: #a52a2a;
+      --border: #d4d0c8;
+      --sidebar-width: 240px;
+      --content-max: 720px;
+      --fn-bg: #f5f3ef;
+    }
+
+    [data-theme="dark"] {
+      --text: #e0ddd5;
+      --text-secondary: #a09a8e;
+      --bg: #1a1917;
+      --bg-alt: #23221f;
+      --accent: #cd5c5c;
+      --accent-light: #e07070;
+      --border: #3a3835;
+      --fn-bg: #23221f;
+    }
+
+    html { font-size: 18px; scroll-behavior: smooth; }
+
+    body {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    /* --- Sidebar --- */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: var(--sidebar-width);
+      height: 100vh;
+      padding: 2rem 1.25rem;
+      border-right: 1px solid var(--border);
+      background: var(--bg);
+      overflow-y: auto;
+      z-index: 100;
+    }
+
+    .sidebar-title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar nav a {
+      display: block;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.35rem 0;
+      padding-left: 0.75rem;
+      border-left: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      line-height: 1.4;
+    }
+
+    .sidebar nav a:hover { color: var(--text); }
+    .sidebar nav a.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      font-weight: 600;
+    }
+
+    .sidebar nav a.nav-indent { padding-left: 1.5rem; font-size: 0.68rem; }
+
+    /* --- Mobile nav --- */
+    .mobile-header {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      z-index: 200;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    .mobile-header .menu-btn {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--text);
+    }
+
+    .mobile-header .mobile-title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-left: 0.5rem;
+    }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 99;
+    }
+
+    /* --- Main content --- */
+    .main {
+      margin-left: var(--sidebar-width);
+      padding: 3rem 2rem 6rem;
+    }
+
+    .content { max-width: var(--content-max); margin: 0 auto; }
+
+    /* --- Header --- */
+    .page-header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-header h1 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      max-width: 600px;
+    }
+
+    .page-header .dateline {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 1rem;
+    }
+
+    /* --- Sections --- */
+    section { margin-bottom: 3.5rem; }
+    section:last-child { margin-bottom: 0; }
+
+    h2 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    h2 .scenario-num {
+      color: var(--accent);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 0.2rem;
+      font-weight: 600;
+    }
+
+    p { margin-bottom: 1rem; }
+
+    /* --- Collapsible notes --- */
+    sup.fn {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      cursor: pointer;
+      padding: 0 0.15em;
+      text-decoration: none;
+      position: relative;
+      top: -0.1em;
+    }
+
+    sup.fn:hover { color: var(--accent-light); text-decoration: underline; }
+
+    .fn-panel {
+      background: var(--fn-bg);
+      border-left: 3px solid var(--accent);
+      padding: 0.8rem 1rem;
+      margin: 0.5rem 0 1rem;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      display: none;
+      animation: fn-in 0.15s ease-out;
+    }
+
+    .fn-panel.visible { display: block; }
+    .fn-panel .fn-label {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      color: var(--accent);
+      margin-right: 0.4em;
+    }
+
+    .fn-panel a { color: var(--accent); }
+    .fn-panel a:hover { color: var(--accent-light); }
+
+    @keyframes fn-in {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- Variant block --- */
+    .variant {
+      border-left: 3px solid var(--border);
+      padding-left: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .variant-label {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
+    }
+
+    /* --- Closing question --- */
+    .closing-question {
+      font-size: 1.15rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* --- Separator --- */
+    .section-sep {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    /* --- Footer --- */
+    .page-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .page-footer a { color: var(--text-secondary); }
+    .page-footer a:hover { color: var(--accent); }
+
+    /* --- Responsive --- */
+    @media (max-width: 960px) {
+      .sidebar { transform: translateX(-100%); transition: transform 0.25s ease; }
+      .sidebar.open { transform: translateX(0); }
+      .sidebar-overlay.open { display: block; }
+      .mobile-header { display: flex; }
+      .main { margin-left: 0; padding-top: 5rem; }
+    }
+
+    @media (max-width: 600px) {
+      html { font-size: 16px; }
+      .main { padding: 4.5rem 1rem 4rem; }
+      .page-header h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.3rem; }
+    }
+
+    /* --- Theme toggle --- */
+    .theme-toggle {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 300;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .theme-toggle:hover { color: var(--text); border-color: var(--text-secondary); }
+
+    /* Print */
+    @media print {
+      .sidebar, .mobile-header, .theme-toggle { display: none !important; }
+      .main { margin-left: 0; }
+      .fn-panel { display: block !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Mobile header -->
+<div class="mobile-header">
+  <button class="menu-btn" onclick="toggleSidebar()" aria-label="Open navigation">&#9776;</button>
+  <span class="mobile-title">All Lawful Uses</span>
+</div>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+  <div class="sidebar-title">All Lawful Uses</div>
+  <nav>
+    <a href="#core-gap">The Core Gap</a>
+    <a href="#not-surveillance" class="nav-indent">1. &ldquo;Not Surveillance&rdquo;</a>
+    <a href="#not-autonomous" class="nav-indent">2. &ldquo;Not Autonomous&rdquo;</a>
+    <a href="#not-domestic" class="nav-indent">3. &ldquo;Not Domestic&rdquo;</a>
+    <a href="#not-mass" class="nav-indent">4. &ldquo;Not Mass&rdquo;</a>
+    <a href="#cloud-to-kill" class="nav-indent">5. Cloud-to-Kill Chain</a>
+    <a href="#structural-problem">The Structural Problem</a>
+    <a href="#the-alternative">The Alternative</a>
+  </nav>
+</aside>
+
+<!-- Main content -->
+<div class="main">
+<div class="content">
+
+  <header class="page-header">
+    <h1>All Lawful Uses</h1>
+    <p class="subtitle">How the OpenAI&ndash;Pentagon agreement&rsquo;s safeguards permit everything they claim to prevent.</p>
+    <p class="dateline">February 28, 2026</p>
+  </header>
+
+  <!-- ==================== THE CORE GAP ==================== -->
+  <section id="core-gap">
+    <h2>The Core Gap</h2>
+
+    <p>On the evening of February 27, 2026, Sam Altman announced that OpenAI had reached an agreement with the Department of War to deploy its models on classified networks. The agreement includes two stated &ldquo;red lines&rdquo;: a prohibition on domestic mass surveillance, and human responsibility for the use of force, including for autonomous weapon systems.</p>
+
+    <p>These sound like meaningful safeguards. They are not.</p>
+
+    <p>A source familiar with the deal told Axios that the restrictions &ldquo;reflect existing U.S. law and the Pentagon&rsquo;s policies, and the intention was not to invent new legal standards.&rdquo;<sup class="fn" data-fn="1">1</sup> The agreement does not prevent mass surveillance or autonomous weapons beyond what current law already prohibits. And current law&mdash;designed before AI existed&mdash;contains gaps large enough to drive a kill chain through.</p>
+
+    <aside class="fn-panel" id="fn-1">
+      <span class="fn-label">1.</span> Axios, <a href="https://www.axios.com/2026/02/27/pentagon-openai-safety-red-lines-anthropic" target="_blank" rel="noopener">&ldquo;Pentagon approves OpenAI safety red lines after dumping Anthropic,&rdquo;</a> February 27, 2026. The source was not identified by name.
+    </aside>
+
+    <p>Each scenario below is (1) consistent with the letter of the OpenAI agreement, (2) legal under current U.S. law, and (3) functionally indistinguishable from the mass surveillance or autonomous killing the agreement claims to prevent. The legal authorities are real. The technical capabilities exist. The precedents are documented.</p>
+
+    <p>The only thing standing between these scenarios and reality is the assumption that the Pentagon would choose restraint&mdash;an assumption directly contradicted by its behavior in the weeks leading to this agreement.<sup class="fn" data-fn="2">2</sup></p>
+
+    <aside class="fn-panel" id="fn-2">
+      <span class="fn-label">2.</span> When Anthropic attempted to add contractual restrictions against precisely these scenarios, the Department of War demanded they allow &ldquo;all lawful purposes,&rdquo; issued ultimatums, branded their CEO a &ldquo;liar&rdquo; with a &ldquo;God complex,&rdquo; and had President Trump ban the company from government use. Fortune, <a href="https://fortune.com/2026/02/27/pentagon-brands-anthropic-ceo-dario-amodei-a-liar-with-a-god-complex-as-deadline-looms-over-ai-use-in-weapons-and-surveillance/" target="_blank" rel="noopener">&ldquo;Pentagon brands Anthropic CEO a &lsquo;liar&rsquo; with a &lsquo;God complex,&rsquo;&rdquo;</a> Feb 27, 2026. Fortune, <a href="https://fortune.com/2026/02/27/trump-us-government-anthropic-claude-pentagon-6-months-phaseout-ai-standoff/" target="_blank" rel="noopener">&ldquo;Trump orders U.S. government to stop using Anthropic,&rdquo;</a> Feb 27, 2026.
+    </aside>
+  </section>
+
+  <hr class="section-sep">
+
+  <!-- ==================== SCENARIO 1 ==================== -->
+  <section id="not-surveillance">
+    <h2><span class="scenario-num">Scenario 1</span> &ldquo;Not Surveillance&rdquo;</h2>
+
+    <p>Every major smartphone app embeds advertising SDKs that ping location coordinates to ad exchanges dozens of times per day. Data brokers aggregate these pings&mdash;along with web browsing histories, app usage logs, purchase records, and social-graph data&mdash;into profiles keyed by advertising IDs, which can be trivially linked back to real identities. This data is commercially available to anyone willing to pay, including the U.S. government. Intelligence agencies already buy it routinely.<sup class="fn" data-fn="3">3</sup></p>
+
+    <aside class="fn-panel" id="fn-3">
+      <span class="fn-label">3.</span> The DIA confirmed in a January 2021 memo to Senator Ron Wyden that it purchases &ldquo;commercially available geolocation metadata aggregated from smartphones&rdquo; and explicitly stated that it does not consider this to require a warrant under <em>Carpenter</em>. The FBI, DHS (including ICE and CBP), IRS Criminal Investigations Division, and various DoD components have all purchased commercial data. <a href="https://cyberscoop.com/phone-location-data-privacy-dia-dhs/" target="_blank" rel="noopener">CyberScoop</a>
+    </aside>
+
+    <p>Now feed it into a frontier language model on a classified network. The model ingests location traces for tens of millions of Americans and correlates them: who was at the same protest, the same mosque, the same gun range, the same lawyer&rsquo;s office. It cross-references browsing histories to map political affiliations and media consumption. It layers in purchase records and social media activity to build behavioral profiles&mdash;not of specific suspects, but of the population. It flags anomalies: a cluster of veterans in the same city whose social media sentiment shifted negative in the same week. A new pattern of movement between a university campus and a known organizer&rsquo;s home. It generates watch lists, sorted by confidence score.</p>
+
+    <p>None of this is &ldquo;surveillance.&rdquo; The government isn&rsquo;t wiretapping anyone, intercepting communications, or conducting searches. It&rsquo;s buying data on the open market and running analytics on it. Under current law, that&rsquo;s not a Fourth Amendment event&mdash;no warrant required, no court oversight, no notification to the people being profiled.<sup class="fn" data-fn="4">4</sup> The Supreme Court&rsquo;s 2018 <em>Carpenter</em> decision required warrants for cell-tower records obtained from carriers, but it explicitly preserved the government&rsquo;s ability to acquire other types of commercial data&mdash;and no court has extended <em>Carpenter</em> to cover data broker purchases.<sup class="fn" data-fn="5">5</sup> Congress tried to close this gap; the bill passed the House and died in the Senate.<sup class="fn" data-fn="6">6</sup></p>
+
+    <aside class="fn-panel" id="fn-4">
+      <span class="fn-label">4.</span> Under the third-party doctrine (<em>Smith v. Maryland</em>, 442 U.S. 735, 1979; <em>United States v. Miller</em>, 425 U.S. 435, 1976), information shared with third parties carries no reasonable expectation of privacy. Data brokers are not classified as electronic communication service providers under ECPA, so the statutory restrictions on government access to provider-held data don&rsquo;t apply to them. <a href="https://www.brennancenter.org/our-work/research-reports/closing-data-broker-loophole" target="_blank" rel="noopener">Brennan Center</a>
+    </aside>
+
+    <aside class="fn-panel" id="fn-5">
+      <span class="fn-label">5.</span> <em>Carpenter v. United States</em>, 585 U.S. 296 (2018). The Court was emphatic about the ruling&rsquo;s limits: it &ldquo;does not disturb the application of <em>Smith</em> and <em>Miller</em>,&rdquo; &ldquo;does not address other business records,&rdquo; and does not consider &ldquo;other collection techniques involving foreign affairs or national security.&rdquo; The DIA&rsquo;s stated legal position is that <em>Carpenter</em> does not apply to purchases. No court has ruled otherwise. See also Ohm &amp; King, &ldquo;Laundering Data,&rdquo; <em>Columbia Law Review</em>, 2023 (<a href="https://columbialawreview.org/content/laundering-data-how-the-governments-purchase-of-commercial-location-data-violates-carpenter-and-evades-the-fourth-amendment/" target="_blank" rel="noopener">link</a>). <a href="https://supreme.justia.com/cases/federal/us/585/16-402/" target="_blank" rel="noopener">Justia</a>
+    </aside>
+
+    <aside class="fn-panel" id="fn-6">
+      <span class="fn-label">6.</span> The Fourth Amendment Is Not For Sale Act (H.R.4639, 118th Congress) passed the House April 17, 2024 with strong bipartisan support. Never voted on by the Senate. Expired January 3, 2025. The Intelligence Community&rsquo;s own declassified report (ODNI, January 2022, <a href="https://www.dni.gov/files/ODNI/documents/assessments/ODNI-Declassified-Report-on-CAI-January2022.pdf" target="_blank" rel="noopener">PDF</a>) found that commercial data has &ldquo;begun to replicate the results of intrusive surveillance techniques&rdquo; and that the IC lacks &ldquo;a comprehensive understanding of how much CAI it collects.&rdquo;
+    </aside>
+
+    <p>The output is a comprehensive profiling system covering every American with a smartphone. The Intelligence Community&rsquo;s own declassified report acknowledges that commercial data now replicates intrusive surveillance.<sup class="fn" data-fn="6">6</sup> The agreement prohibits &ldquo;mass surveillance.&rdquo; The legal classification of this system is data analytics.</p>
+
+    <div class="variant">
+      <div class="variant-label">Variant: OSINT at Scale</div>
+      <p>The same models continuously ingest all public social media posts by Americans, building real-time sentiment maps, identifying &ldquo;radicalization trajectories,&rdquo; and auto-generating watch lists. This is open-source intelligence&mdash;entirely lawful, entirely unregulated, and functionally a panopticon.</p>
+    </div>
+  </section>
+
+  <hr class="section-sep">
+
+  <!-- ==================== SCENARIO 2 ==================== -->
+  <section id="not-autonomous">
+    <h2><span class="scenario-num">Scenario 2</span> &ldquo;Not Autonomous&rdquo;</h2>
+
+    <p>OpenAI models, operating in a secure cloud environment, are integrated into a targeting pipeline. The AI ingests intelligence data&mdash;signals intercepts, satellite imagery, human intelligence reports. It identifies candidate targets, assesses probability of combatant status, and generates recommended target packages with confidence scores, expected collateral damage estimates, and legal justifications under the Law of Armed Conflict. These packages are presented to a human operator for &ldquo;approval.&rdquo; The operator receives hundreds of packages per shift. Each comes with an AI-generated dossier and recommendation. The operator has seconds to review before the tactical window closes. The approval rate is near-total.</p>
+
+    <p>A human is in the loop. A human approves each strike. A human is &ldquo;responsible for the use of force.&rdquo; Under the agreement&rsquo;s terms, this is a human-directed weapons system with AI decision support.</p>
+
+    <p>Note the word in the agreement: <em>responsibility</em>. Not decision-making. Not control. Under existing military doctrine, a commander is responsible for actions taken under their authority even when they didn&rsquo;t personally evaluate each decision. DoD Directive 3000.09 requires &ldquo;appropriate levels of human judgment over the use of force&rdquo;&mdash;and &ldquo;appropriate&rdquo; is deliberately flexible.<sup class="fn" data-fn="7">7</sup> The phrase &ldquo;human in the loop,&rdquo; which most people assume is U.S. military policy, appears nowhere in DoD doctrine.<sup class="fn" data-fn="8">8</sup></p>
+
+    <aside class="fn-panel" id="fn-7">
+      <span class="fn-label">7.</span> DoD Directive 3000.09, &ldquo;Autonomy in Weapon Systems,&rdquo; updated January 25, 2023. The directive does not ban autonomous weapons. It requires a senior review process before development and fielding&mdash;a process that, as of 2019, had apparently never been triggered. Human Rights Watch concluded the 2023 update &ldquo;does not radically alter the 2012 policy&rdquo; and that &ldquo;many of the earlier policy&rsquo;s shortcomings and weaknesses remain,&rdquo; including &ldquo;significant loopholes.&rdquo; The directive also allows waivers from the Deputy Secretary of Defense. <a href="https://www.esd.whs.mil/portals/54/documents/dd/issuances/dodd/300009p.pdf" target="_blank" rel="noopener">Full text (PDF)</a>. <a href="https://www.hrw.org/news/2023/02/14/review-2023-us-policy-autonomy-weapons-systems" target="_blank" rel="noopener">HRW analysis</a>.
+    </aside>
+
+    <aside class="fn-panel" id="fn-8">
+      <span class="fn-label">8.</span> &ldquo;Autonomous Weapon Systems: No, &lsquo;Human in the Loop&rsquo; Required, and Other Myths Dispelled,&rdquo; <em>War on the Rocks</em>, May 2025. See also Lt Col Tim O&rsquo;Brien, &ldquo;Please Stop Saying &lsquo;Human in the Loop,&rsquo;&rdquo; IFC/USAFA. The U.S. has never had a policy mandating a human in the loop for weapons. It has also resisted the international &ldquo;meaningful human control&rdquo; framework, arguing that &ldquo;a focus on &lsquo;control&rsquo; would obscure rather than clarify the genuine challenges.&rdquo;
+    </aside>
+
+    <p>This pattern has a precedent. In April 2024, <em>+972 Magazine</em> and <em>Local Call</em> published an investigation based on interviews with six Israeli intelligence officers reporting that Israel&rsquo;s &ldquo;Lavender&rdquo; AI system operated exactly this way during the Gaza war: AI-generated target lists, human operators spending approximately 20 seconds per target, primarily verifying the target was male.<sup class="fn" data-fn="9">9</sup> The specific figures are contested and unverified by outside auditors. The point is not that the Lavender reporting is proven in every detail&mdash;it&rsquo;s that the OpenAI agreement&rsquo;s structure <em>permits exactly this pattern</em>. &ldquo;Human responsibility&rdquo; is satisfied by a commander who authorizes the system. &ldquo;Not autonomous&rdquo; is satisfied because a human clicks a button. The AI makes the actual decisions. The human provides legal cover.</p>
+
+    <aside class="fn-panel" id="fn-9">
+      <span class="fn-label">9.</span> Yuval Abraham, &ldquo;&lsquo;Lavender&rsquo;: The AI machine directing Israel&rsquo;s bombing spree in Gaza,&rdquo; <em>+972 Magazine / Local Call</em>, April 2024. Israel did not dispute Lavender&rsquo;s existence as a tool but denied the specific claims about approval rates and civilian casualty ratios. The Lieber Institute at West Point published a <a href="https://lieber.westpoint.edu/gospel-lavender-law-armed-conflict/" target="_blank" rel="noopener">legal analysis</a>; the investigation was cited by CNN and Foreign Policy. Sourcing: six anonymous intelligence officers with direct involvement&mdash;meaningful but not independently verified. <a href="https://www.972mag.com/lavender-ai-israeli-army-gaza/" target="_blank" rel="noopener">Original investigation</a>.
+    </aside>
+
+    <div class="variant">
+      <div class="variant-label">Variant: Time-Compressed Authorization</div>
+      <p>In a peer conflict, the speed of adversary AI compresses the targeting cycle to seconds. A commander authorizes a targeting envelope: rules of engagement specifying target categories, geographic boundaries, and time windows. The AI engages within those parameters. Each engagement is &ldquo;authorized&rdquo; because the human set the parameters. None is &ldquo;autonomous&rdquo; because a human defined the rules. There is no international treaty prohibiting this&mdash;negotiations through the UN&rsquo;s Convention on Certain Conventional Weapons have been blocked for over a decade by major military powers including the United States.<sup class="fn" data-fn="10">10</sup></p>
+    </div>
+
+    <aside class="fn-panel" id="fn-10">
+      <span class="fn-label">10.</span> The CCW Group of Governmental Experts on lethal autonomous weapons has met since 2014 without producing a binding instrument, blocked by the consensus requirement exploited by the U.S., Russia, Israel, India, and others. In December 2024, the UN General Assembly adopted a non-binding resolution with 166 votes in favor, 3 opposed. <a href="https://www.armscontrol.org/act/2025-01/features/geopolitics-and-regulation-autonomous-weapons-systems" target="_blank" rel="noopener">Arms Control Association</a>.
+    </aside>
+  </section>
+
+  <hr class="section-sep">
+
+  <!-- ==================== SCENARIO 3 ==================== -->
+  <section id="not-domestic">
+    <h2><span class="scenario-num">Scenario 3</span> &ldquo;Not Domestic&rdquo;</h2>
+
+    <p>OpenAI models are deployed to process the vast data trove collected under Section 702 of FISA&mdash;the law authorizing surveillance of non-U.S. persons located abroad.<sup class="fn" data-fn="11">11</sup> The AI identifies patterns across languages and communication channels, builds relationship graphs connecting foreign targets to American contacts, and flags Americans whose communication patterns suggest security concerns. It correlates these findings with the commercially purchased data from Scenario 1, building comprehensive profiles of flagged Americans.</p>
+
+    <aside class="fn-panel" id="fn-11">
+      <span class="fn-label">11.</span> 50 U.S.C. &sect; 1881a. Section 702 authorizes targeting non-U.S. persons reasonably believed to be outside the United States. Collection occurs through PRISM (compelling data from internet companies, ~91% of collection) and upstream collection (tapping internet backbone infrastructure, ~9%). <a href="https://www.law.cornell.edu/uscode/text/50/1881a" target="_blank" rel="noopener">Statute</a>.
+    </aside>
+
+    <p>This is &ldquo;foreign&rdquo; surveillance. The agreement prohibits <em>domestic</em> mass surveillance, and Section 702 targets are foreign. But communications between a foreign target and an American are inevitably collected too&mdash;&ldquo;incidental collection&rdquo; that is not considered domestic surveillance under current law. With approximately 292,000 foreign targets in calendar year 2024,<sup class="fn" data-fn="12">12</sup> each communicating with multiple Americans, the volume of incidentally collected domestic data is vast. The government has formally refused to estimate how many Americans are affected.</p>
+
+    <aside class="fn-panel" id="fn-12">
+      <span class="fn-label">12.</span> ODNI Annual Statistical Transparency Report, CY2024 (<a href="https://www.intelligence.gov/assets/documents/702-documents/statistical-transparency-report/ASTR_CY24.pdf" target="_blank" rel="noopener">PDF</a>). Target count rose from approximately 269,000 in CY2023.
+    </aside>
+
+    <p>It gets worse. Government analysts can search this database using American identifiers&mdash;names, email addresses, phone numbers&mdash;without a warrant. These &ldquo;backdoor searches&rdquo; numbered 3.4 million in 2021 alone.<sup class="fn" data-fn="13">13</sup> When Section 702 was reauthorized in April 2024, the Senate rejected an amendment requiring a warrant for these searches and <em>expanded</em> the definition of entities that can be compelled to assist with collection.<sup class="fn" data-fn="14">14</sup> One federal court has pushed back&mdash;ruling in December 2024 that U.S. person queries are a &ldquo;separate Fourth Amendment event&rdquo; requiring a warrant<sup class="fn" data-fn="15">15</sup>&mdash;but this ruling hasn&rsquo;t been adopted broadly. And the oversight board that documented these abuses, the Privacy and Civil Liberties Oversight Board, now lacks a quorum and cannot produce a report for the upcoming 2026 reauthorization.<sup class="fn" data-fn="16">16</sup></p>
+
+    <aside class="fn-panel" id="fn-13">
+      <span class="fn-label">13.</span> ODNI/FBI reported figures. The FBI subsequently reported a decrease to approximately 204,000 and then 5,518 in 2024, after the FISC found &ldquo;persistent and widespread violations.&rdquo; Targets of improper queries included Black Lives Matter protesters, January 6 participants, 19,000 donors to a single Congressional campaign, journalists, and members of Congress. <a href="https://www.brennancenter.org/our-work/research-reports/fisa-section-702-backdoor-searches-myths-and-facts" target="_blank" rel="noopener">Brennan Center</a>.
+    </aside>
+
+    <aside class="fn-panel" id="fn-14">
+      <span class="fn-label">14.</span> Reforming Intelligence and Securing America Act (RISAA), signed April 20, 2024. Extended Section 702 for only two years&mdash;the shortest renewal ever. The ECSP expansion potentially reaches any person or company with &ldquo;access&rdquo; to &ldquo;equipment&rdquo; on which communications travel. Senator Wyden noted the DOJ&rsquo;s promise to apply this narrowly &ldquo;has no legal force.&rdquo; <a href="https://www.lawfaremedia.org/article/fisa-section-702-reauthorized-for-two-years" target="_blank" rel="noopener">Lawfare</a>. <a href="https://www.eff.org/deeplinks/2024/04/us-senate-and-biden-administration-shamefully-renew-and-expand-fisa-section-702-0" target="_blank" rel="noopener">EFF</a>.
+    </aside>
+
+    <aside class="fn-panel" id="fn-15">
+      <span class="fn-label">15.</span> <em>United States v. Hasbajrami</em> (E.D.N.Y.), opinion by Judge LaShann DeArcy Hall, December 2024 (declassified January 2025). The first court to impose a warrant requirement on backdoor searches of Section 702 data. <a href="https://www.justsecurity.org/106895/warrant-needed-fisa-section-702/" target="_blank" rel="noopener">Just Security</a>. <a href="https://www.eff.org/deeplinks/2025/01/victory-federal-court-finally-rules-backdoor-searches-702-data-unconstitutional" target="_blank" rel="noopener">EFF</a>.
+    </aside>
+
+    <aside class="fn-panel" id="fn-16">
+      <span class="fn-label">16.</span> The PCLOB&rsquo;s 2023 report found &ldquo;little justification&rdquo; for close to 5 million U.S. person queries from 2019&ndash;2022 and documented over 278,000 non-compliant FBI searches. As of early 2026, the Board lacks a quorum. Brookings described this as threatening &ldquo;both privacy and national security.&rdquo; <a href="https://documents.pclob.gov/prod/Documents/OversightReport/054417e4-9d20-427a-9850-862a6f29ac42/2023%20PCLOB%20702%20Report%20(002).pdf" target="_blank" rel="noopener">PCLOB report (PDF)</a>. <a href="https://www.brookings.edu/articles/why-dismantling-the-pclob-and-csrb-threatens-privacy-and-national-security/" target="_blank" rel="noopener">Brookings</a>.
+    </aside>
+
+    <p>The practical effect: the government has an AI system analyzing the communications of millions of Americans without a warrant, without probable cause, and without their knowledge&mdash;by routing the analysis through a foreign intelligence framework. The domestic/foreign distinction becomes meaningless when AI can extract comprehensive profiles of American citizens from &ldquo;incidentally&rdquo; collected data at a depth no human analyst could achieve.</p>
+  </section>
+
+  <hr class="section-sep">
+
+  <!-- ==================== SCENARIO 4 ==================== -->
+  <section id="not-mass">
+    <h2><span class="scenario-num">Scenario 4</span> &ldquo;Not Mass&rdquo;</h2>
+
+    <p>The Department of War establishes a domestic threat assessment program. OpenAI models process commercially available data to identify individuals matching specific criteria: prior military service combined with social media activity critical of the government, purchase of certain items, and association with flagged organizations. At any given moment, the system monitors 3 million Americans&mdash;roughly 1% of the population. Each individual is specifically selected based on documented criteria. This is not &ldquo;mass&rdquo; surveillance. It is targeted surveillance that happens to target a lot of people.</p>
+
+    <p>The agreement prohibits &ldquo;mass&rdquo; domestic surveillance. It does not define &ldquo;mass.&rdquo; There is no threshold in the agreement&mdash;or anywhere in U.S. law&mdash;defining when &ldquo;targeted&rdquo; becomes &ldquo;mass.&rdquo;</p>
+
+    <p>This framing might sound like a caricature, but it has precedent. Section 702 is legally classified as &ldquo;targeted&rdquo; surveillance&mdash;each of its 292,000 selectors is individually documented&mdash;yet the program sweeps up communications involving millions of non-targets. When the FISA Court approved upstream collection, it did so knowing that multi-communication transactions would inevitably capture communications between entirely innocent parties.<sup class="fn" data-fn="17">17</sup> &ldquo;Targeted&rdquo; has already been stretched to cover programs with mass impact. AI&rsquo;s ability to apply selection criteria at arbitrary scale makes that stretch permanent: any program with individualized criteria is &ldquo;targeted&rdquo; regardless of how many millions it matches.</p>
+
+    <aside class="fn-panel" id="fn-17">
+      <span class="fn-label">17.</span> In 2011, the FISC determined that NSA&rsquo;s handling of upstream collection violated the Fourth Amendment. The government presented revised minimization procedures, which the court approved, but later disclosed &ldquo;significant noncompliance.&rdquo; The NSA ended &ldquo;about&rdquo; collection in 2017 after years of operating unconstitutionally, but the RISAA statute does not prohibit its resumption. <a href="https://www.justsecurity.org/33044/unprecedented-unlawful-nsas-upstream-surveillance/" target="_blank" rel="noopener">Just Security</a>.
+    </aside>
+  </section>
+
+  <hr class="section-sep">
+
+  <!-- ==================== SCENARIO 5 ==================== -->
+  <section id="cloud-to-kill">
+    <h2><span class="scenario-num">Scenario 5</span> Cloud-to-Kill Chain</h2>
+
+    <p>An OpenAI model runs in a secure cloud environment. It processes sensor data streamed in real-time from drones: video feeds, infrared imaging, radar returns. It identifies targets, classifies them, and generates engagement solutions&mdash;weapon selection, approach vectors, collateral damage estimates. These outputs are transmitted to the drone&rsquo;s weapons platform, which executes them. The model never runs on the drone. The drone is a remote actuator, like a monitor displaying output from a cloud gaming service. The computation happens in the cloud. The killing happens at the edge.</p>
+
+    <p>The agreement restricts deployment to cloud environments rather than &ldquo;edge systems.&rdquo; This addresses <em>where the model runs</em>, not <em>what it controls</em>. The physical location of computation is irrelevant to autonomy. A cloud-based AI controlling a weapons platform in real-time is functionally identical to an edge-deployed autonomous weapon, except with slightly more latency.</p>
+
+    <p>The cloud architecture technically gives OpenAI a kill switch&mdash;they could refuse to process certain requests. But we have just observed, in real time, what happens when an AI company refuses the Pentagon. Anthropic attempted exactly this. The result was ultimatums, a presidential ban, threats under the Defense Production Act, and designation as a &ldquo;supply chain risk to national security.&rdquo; The kill switch is ornamental. Its use has been demonstrated to be career-ending for the company that pulls it.</p>
+  </section>
+
+  <hr class="section-sep">
+
+  <!-- ==================== THE STRUCTURAL PROBLEM ==================== -->
+  <section id="structural-problem">
+    <h2>The Structural Problem</h2>
+
+    <p>Every scenario above shares the same root cause: the agreement is anchored to legal frameworks designed before AI existed. The prohibition on &ldquo;domestic mass surveillance&rdquo; inherits every gap in Fourth Amendment jurisprudence, FISA, and the third-party doctrine. The requirement for &ldquo;human responsibility&rdquo; inherits every ambiguity in DoD Directive 3000.09 and the deliberate absence of a &ldquo;human in the loop&rdquo; requirement. The cloud/edge restriction inherits the irrelevance of computational geography in an era of real-time networked systems.</p>
+
+    <p>But the problem runs deeper than the agreement itself. The agreement provides <em>legitimacy cover</em>. &ldquo;We have safeguards,&rdquo; the Pentagon can now say. &ldquo;OpenAI agreed to red lines.&rdquo; This narrative neutralizes the political pressure that might otherwise produce actual regulation. An imperfect agreement marketed as sufficient is more dangerous than no agreement at all, because it closes the window for genuine oversight while leaving the underlying gaps intact.</p>
+
+    <p>The legal standards that exist are not adequate. The ODNI&rsquo;s own report says so. The PCLOB says so. The IC&rsquo;s own legal interpretation of <em>Carpenter</em> says so. The failure of the Fourth Amendment Is Not For Sale Act says so. The absence of any international treaty on autonomous weapons says so. Eleven years of inconclusive talks at the CCW say so.</p>
+
+    <p>The agreement is a bet that existing law is sufficient. The evidence&mdash;much of it from the government&rsquo;s own reports&mdash;says it is not.</p>
+  </section>
+
+  <hr class="section-sep">
+
+  <!-- ==================== THE ALTERNATIVE ==================== -->
+  <section id="the-alternative">
+    <h2>The Alternative</h2>
+
+    <p>On February 26, 2026&mdash;the day before the deadline, the ban, and the OpenAI deal&mdash;Dario Amodei published a statement explaining Anthropic&rsquo;s position.<sup class="fn" data-fn="18">18</sup> The core argument: the law has not caught up with AI. On surveillance: &ldquo;to the extent that such surveillance is currently legal, this is only because the law has not yet caught up with the rapidly growing capabilities of AI.&rdquo; On autonomous weapons: frontier AI systems &ldquo;cannot be relied upon to exercise the critical judgment that our highly trained, professional troops exhibit every day.&rdquo;</p>
+
+    <aside class="fn-panel" id="fn-18">
+      <span class="fn-label">18.</span> Anthropic, <a href="https://www.anthropic.com/news/statement-department-of-war" target="_blank" rel="noopener">&ldquo;Statement on the Department of War,&rdquo;</a> February 26, 2026. Amodei wrote that he &ldquo;believe[s] deeply in the existential importance of using AI to defend the United States and other democracies&rdquo; and noted Anthropic was &ldquo;the first frontier AI company&rdquo; deploying models in classified government networks.
+    </aside>
+
+    <p>Anthropic proposed restrictions defined by functional outcomes, not legal categories. Don&rsquo;t use our models to mass-profile Americans, period&mdash;not &ldquo;unless it&rsquo;s technically legal.&rdquo; Don&rsquo;t use our models for fully autonomous weapons, period&mdash;not &ldquo;unless a human is technically responsible.&rdquo; They also offered joint R&amp;D with the Pentagon to improve AI reliability for autonomous systems. The Department of War declined.<sup class="fn" data-fn="19">19</sup></p>
+
+    <aside class="fn-panel" id="fn-19">
+      <span class="fn-label">19.</span> The Pentagon&rsquo;s response was not engagement but coercion. Defense Secretary Hegseth issued an ultimatum to agree to &ldquo;all lawful purposes&rdquo; by 5:01 PM Friday or face the Defense Production Act. President Trump banned the company from government use and designated it a &ldquo;supply chain risk to national security.&rdquo; Anthropic announced it would challenge the designation in court. <a href="https://www.axios.com/2026/02/24/anthropic-pentagon-claude-hegseth-dario" target="_blank" rel="noopener">Axios</a>. <a href="https://fortune.com/2026/02/28/openai-pentagon-deal-anthropic-designated-supply-chain-risk-unprecedented-action-damage-its-growth/" target="_blank" rel="noopener">Fortune</a>.
+    </aside>
+
+    <p>Hours later, OpenAI signed a deal with &ldquo;safeguards&rdquo; that permit every scenario described on this page. More than 60 OpenAI employees and 300 Google employees signed an open letter supporting Anthropic&rsquo;s position, warning: &ldquo;They&rsquo;re trying to divide each company with fear that the other will give in.&rdquo;<sup class="fn" data-fn="20">20</sup></p>
+
+    <aside class="fn-panel" id="fn-20">
+      <span class="fn-label">20.</span> TechCrunch, <a href="https://techcrunch.com/2026/02/27/employees-at-google-and-openai-support-anthropics-pentagon-stand-in-open-letter/" target="_blank" rel="noopener">&ldquo;Employees at Google and OpenAI support Anthropic&rsquo;s Pentagon stand in open letter,&rdquo;</a> February 27, 2026.
+    </aside>
+
+    <p>One company gave in.</p>
+
+    <p class="closing-question">The question for anyone who finds the OpenAI agreement reassuring: which specific scenario above does it prevent?</p>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="page-footer">
+    <p>This analysis examines the publicly described terms of the OpenAI&ndash;Department of War agreement. All legal citations have been verified against primary sources where available. Contested claims (particularly regarding the Lavender system) are attributed to their sources with caveats noted. The scenarios describe activities the agreement <em>permits</em>&mdash;not predictions of what will occur.</p>
+    <p style="margin-top:0.8rem;">Published February 28, 2026.</p>
+  </footer>
+
+</div>
+</div>
+
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">&#9789;</button>
+
+<script>
+// Theme toggle
+function toggleTheme() {
+  var html = document.documentElement;
+  var btn = document.querySelector('.theme-toggle');
+  var isDark = html.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    html.removeAttribute('data-theme');
+    btn.innerHTML = '&#9789;';
+    localStorage.setItem('theme', 'light');
+  } else {
+    html.setAttribute('data-theme', 'dark');
+    btn.innerHTML = '&#9788;';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+
+(function() {
+  var saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    var btn = document.querySelector('.theme-toggle');
+    if (btn) btn.innerHTML = '&#9788;';
+  }
+})();
+
+// Footnote expansion
+document.addEventListener('click', function(e) {
+  var fn = e.target.closest('sup.fn');
+  if (!fn) return;
+
+  e.preventDefault();
+  var id = 'fn-' + fn.getAttribute('data-fn');
+  var panel = document.getElementById(id);
+  if (!panel) return;
+
+  var isVisible = panel.classList.contains('visible');
+
+  document.querySelectorAll('.fn-panel.visible').forEach(function(p) {
+    p.classList.remove('visible');
+  });
+
+  if (!isVisible) {
+    panel.classList.add('visible');
+    setTimeout(function() {
+      var rect = panel.getBoundingClientRect();
+      if (rect.bottom > window.innerHeight || rect.top < 0) {
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }, 20);
+  }
+});
+
+// Sidebar nav highlighting
+var sections = document.querySelectorAll('section[id]');
+var navLinks = document.querySelectorAll('.sidebar nav a');
+
+function updateActiveNav() {
+  var current = '';
+  var offset = window.innerHeight * 0.3;
+  sections.forEach(function(section) {
+    if (section.getBoundingClientRect().top < offset) current = section.id;
+  });
+  navLinks.forEach(function(link) {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+  });
+}
+
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+updateActiveNav();
+
+// Mobile sidebar
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.querySelector('.sidebar-overlay').classList.toggle('open');
+}
+
+document.querySelectorAll('.sidebar nav a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    if (window.innerWidth <= 960) toggleSidebar();
+  });
+});
+</script>
+
+</body>
+</html>
