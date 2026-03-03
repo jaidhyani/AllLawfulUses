@@ -358,11 +358,10 @@
 <aside class="sidebar">
   <div class="sidebar-title">All Lawful Uses</div>
   <nav>
-    <a href="#core-gap">The Core Gap</a>
-    <a href="#not-surveillance" class="nav-indent">1. &ldquo;Not Surveillance&rdquo;</a>
-    <a href="#not-domestic" class="nav-indent">2. &ldquo;Not Domestic&rdquo;</a>
-    <a href="#not-mass" class="nav-indent">3. &ldquo;Not Mass&rdquo;</a>
-    <a href="#not-on-the-drone" class="nav-indent">4. &ldquo;Not on the Drone&rdquo;</a>
+    <a href="#not-surveillance">1. &ldquo;Not Surveillance&rdquo;</a>
+    <a href="#not-domestic">2. &ldquo;Not Domestic&rdquo;</a>
+    <a href="#not-mass">3. &ldquo;Not Mass&rdquo;</a>
+    <a href="#not-on-the-drone">4. &ldquo;Not on the Drone&rdquo;</a>
     <a href="#structural-problem">The Structural Problem</a>
     <a href="#the-alternative">The Alternative</a>
   </nav>
@@ -378,55 +377,29 @@
     <p class="dateline">February 28, 2026 · Updated March 2, 2026</p>
   </header>
 
-  <!-- ==================== THE CORE GAP ==================== -->
-  <section id="core-gap">
-    <h2>The Core Gap</h2>
+  <!-- ==================== INTRODUCTION ==================== -->
+  <section id="introduction">
 
-    <p>On the evening of February 27, 2026, Sam Altman announced that OpenAI had reached an agreement with the Department of War to deploy its models on classified networks. He wrote:</p>
-
-    <div class="agreement-quote">&ldquo;Two of our most important safety principles are prohibitions on domestic mass surveillance and human responsibility for the use of force, including for autonomous weapon systems. The DoW agrees with these principles, reflects them in law and policy, and we put them into our agreement.&rdquo;<sup class="fn" data-fn="1">1</sup></div>
+    <p>On February 27, 2026, OpenAI <a href="https://openai.com/index/our-agreement-with-the-department-of-war/" target="_blank" rel="noopener">announced an agreement</a> with the Department of War to deploy AI models on classified networks.<sup class="fn" data-fn="1">1</sup> The published contract language permits use of the system &ldquo;for <strong>all lawful purposes</strong>, consistent with applicable law.&rdquo; On March 2, <a href="https://openai.com/index/our-agreement-with-the-department-of-war/" target="_blank" rel="noopener">additional language</a> was negotiated prohibiting &ldquo;intentional&rdquo; domestic surveillance and &ldquo;deliberate&rdquo; use of commercially acquired personal data. For context: <a href="https://www.anthropic.com/news/statement-department-of-war" target="_blank" rel="noopener">Anthropic proposed restrictions</a> that go beyond existing law; the Department of War <a href="https://techcrunch.com/2026/02/27/pentagon-moves-to-designate-anthropic-as-a-supply-chain-risk/" target="_blank" rel="noopener">designated Anthropic a supply chain risk</a><sup class="fn" data-fn="4">4</sup> and signed with OpenAI hours later.</p>
 
     <aside class="fn-panel" id="fn-1">
       <span class="fn-label">1.</span> Sam Altman, <a href="https://x.com/sama/status/2027578652477821175" target="_blank" rel="noopener">post on X</a>, February 27, 2026, and <a href="https://openai.com/index/our-agreement-with-the-department-of-war/" target="_blank" rel="noopener">OpenAI blog post</a>, same date.
     </aside>
 
-    <p>Here is the contract language OpenAI published:</p>
-
-    <div class="agreement-quote">&ldquo;The Department of War may use the AI System for <strong>all lawful purposes</strong>, consistent with applicable law, operational requirements, and well-established safety and oversight protocols. The AI System will not be used to independently direct autonomous weapons in any case where law, regulation, or Department policy requires human control, nor will it be used to assume other high-stakes decisions that require approval by a human decisionmaker under the same authorities.&rdquo;<sup class="fn" data-fn="2">2</sup></div>
-
     <aside class="fn-panel" id="fn-2">
       <span class="fn-label">2.</span> OpenAI, <a href="https://openai.com/index/our-agreement-with-the-department-of-war/" target="_blank" rel="noopener">&ldquo;Our agreement with the Department of War,&rdquo;</a> February 27, 2026 (updated March 2, 2026). All contract language cited on this page comes from excerpts OpenAI chose to publish. The full agreement text has not been made public.
     </aside>
-
-    <p>The agreement also specifies that OpenAI&rsquo;s system &ldquo;shall not be used for unconstrained monitoring of U.S. persons&rsquo; private information as consistent with&rdquo; existing surveillance authorities, including the Fourth Amendment, FISA, and Executive Order 12333.<sup class="fn" data-fn="2">2</sup></p>
-
-    <p>The system will not direct autonomous weapons <em>in any case where existing law requires human control</em>. It will not conduct <em>unconstrained</em> monitoring <em>as consistent with</em> existing authorities. Every restriction maps to what the law already requires. A source familiar with the deal confirmed this to Axios: the restrictions &ldquo;reflect existing U.S. law and the Pentagon&rsquo;s policies, and the intention was not to invent new legal standards.&rdquo;<sup class="fn" data-fn="3">3</sup></p>
 
     <aside class="fn-panel" id="fn-3">
       <span class="fn-label">3.</span> Axios, <a href="https://www.axios.com/2026/02/27/pentagon-openai-safety-red-lines-anthropic" target="_blank" rel="noopener">&ldquo;Pentagon approves OpenAI safety red lines after dumping Anthropic,&rdquo;</a> February 27, 2026. The source was not identified by name.
     </aside>
 
-    <p>This means the agreement permits everything that is currently legal under U.S. law. The question is whether current law&mdash;designed before AI existed&mdash;is adequate. The scenarios below examine specific gaps.</p>
-
-    <p>On March 2, after widespread criticism, OpenAI announced that additional language had been negotiated into the agreement:<sup class="fn" data-fn="2">2</sup></p>
-
-    <div class="agreement-quote">&ldquo;Consistent with applicable laws, including the Fourth Amendment to the United States Constitution, National Security Act of 1947, FISA Act of 1978, the AI system shall not be intentionally used for domestic surveillance of U.S. persons and nationals.&rdquo;</div>
-
-    <div class="agreement-quote">&ldquo;For the avoidance of doubt, the Department understands this limitation to prohibit deliberate tracking, surveillance, or monitoring of U.S. persons or nationals, including through the procurement or use of commercially acquired personal or identifiable information.&rdquo;</div>
-
-    <p>This is a significant addition. It explicitly names commercially acquired data and directly addresses the data-broker gap. The clause opens with &ldquo;consistent with applicable laws&rdquo;&mdash;the same anchor to existing law. The surveillance must be &ldquo;intentional.&rdquo; The tracking must be &ldquo;deliberate.&rdquo; When AI systems process bulk data to identify patterns, no individual is &ldquo;intentionally&rdquo; targeted until the algorithm flags them. Whether that constitutes &ldquo;deliberate surveillance&rdquo; of the millions whose data was processed to find the flag is a question that existing law has not resolved.</p>
-
-    <p>OpenAI also states that the Department &ldquo;affirmed that our services will not be used by Department of War intelligence agencies like the NSA&rdquo; and that &ldquo;any services to those agencies would require a new agreement.&rdquo;<sup class="fn" data-fn="2">2</sup> This appears in OpenAI&rsquo;s blog post; it is not quoted as contract language. And it does not cover other DoD intelligence components&mdash;the DIA, NRO, NGA, and others&mdash;that routinely handle surveillance data.</p>
-
-    <p>OpenAI&rsquo;s FAQ states: &ldquo;Based on our safety stack, the contract language, and existing laws that heavily restrict DoW from domestic surveillance, we are confident that this cannot happen.&rdquo;<sup class="fn" data-fn="2">2</sup> That confidence rests on the adequacy of existing law. Each scenario below examines a specific area where existing law may not provide the protection the agreement assumes.</p>
-
-    <p>For context: Anthropic proposed restrictions that go <em>beyond</em> existing law&mdash;no mass domestic surveillance and no fully autonomous weapons, regardless of what the law technically permits. The Department of War issued ultimatums, branded Anthropic&rsquo;s CEO a &ldquo;liar&rdquo; with a &ldquo;God complex,&rdquo; had President Trump ban the company from all federal agencies, and designated Anthropic a &ldquo;supply chain risk to national security&rdquo;&mdash;a label historically reserved for foreign adversaries like Huawei, never before publicly applied to an American company.<sup class="fn" data-fn="4">4</sup> Hours later, OpenAI signed the deal.</p>
-
     <aside class="fn-panel" id="fn-4">
       <span class="fn-label">4.</span> TechCrunch, <a href="https://techcrunch.com/2026/02/27/pentagon-moves-to-designate-anthropic-as-a-supply-chain-risk/" target="_blank" rel="noopener">&ldquo;Pentagon moves to designate Anthropic as a supply-chain risk,&rdquo;</a> Feb 27, 2026. Under 10 USC &sect;3252, no military contractor, supplier, or partner that does business with the Department of War may conduct any commercial activity with Anthropic. The GSA terminated Anthropic&rsquo;s OneGov deal and removed it from its Multiple Award Schedule. Fortune, <a href="https://fortune.com/2026/02/27/pentagon-brands-anthropic-ceo-dario-amodei-a-liar-with-a-god-complex-as-deadline-looms-over-ai-use-in-weapons-and-surveillance/" target="_blank" rel="noopener">&ldquo;Pentagon brands Anthropic CEO a &lsquo;liar&rsquo; with a &lsquo;God complex,&rsquo;&rdquo;</a> Feb 27, 2026. CBS News, <a href="https://www.cbsnews.com/news/hegseth-declares-anthropic-supply-chain-risk/" target="_blank" rel="noopener">&ldquo;Hegseth declares Anthropic a supply chain risk,&rdquo;</a> Feb 28, 2026.
     </aside>
 
-    <p>Each scenario below describes an activity that appears to be (1) consistent with the published terms of the OpenAI agreement, including the March 2 revisions, and (2) legal under current U.S. law.</p>
+    <p>The agreement&rsquo;s restrictions reference existing U.S. law&mdash;a source familiar with the deal <a href="https://www.axios.com/2026/02/27/pentagon-openai-safety-red-lines-anthropic" target="_blank" rel="noopener">confirmed to Axios</a> that &ldquo;the intention was not to invent new legal standards.&rdquo;<sup class="fn" data-fn="3">3</sup> This page examines what those existing laws permit. Each scenario describes an activity that appears to be consistent with the published agreement terms<sup class="fn" data-fn="2">2</sup> and legal under current U.S. law.</p>
+
   </section>
 
   <hr class="section-sep">
